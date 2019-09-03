@@ -1,0 +1,171 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Field Services",
+		"_postman_id": "3f3b2f59-be5b-3324-635d-ffb5c2021e9b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create driver",
+			"request": {
+				"url": "localhost:3000/drivers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Jeff\",\n\t\"mobileNo\": \"546457457\",\n\t\"device\": {\n\t\t\"os\": \"ios\",\n\t\t\"version\": \"5.6\"\n\t},\n\t\"currentLocation\": \"QV Market\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create vehicle",
+			"request": {
+				"url": "localhost:3000/vehicles",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"type\": \"Mini Van\",\n\t\"registrationNumber\":\"Z5567658\",\n\t\"driver\": \"5d6a613c6f1c133c14b80953\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Enter location",
+			"request": {
+				"url": "localhost:3000/locations",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"location\": \"Melton, SOuth Melbourne\",\n\t\"driver\": \"5d6b5ce23c46a64b74270e4f\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Driver historical location ",
+			"request": {
+				"url": {
+					"raw": "localhost:3000/drivers/5d6b5ce23c46a64b74270e4f/location?type=history",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"drivers",
+						"5d6b5ce23c46a64b74270e4f",
+						"location"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "history",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Driver search - Name",
+			"request": {
+				"url": {
+					"raw": "localhost:3000/drivers?name=Je",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"drivers"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Je",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Vehicle Driver Location details",
+			"request": {
+				"url": "localhost:3000/vehicles/5d6e4d1024cb852868b4a871",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Driver Search - Location",
+			"request": {
+				"url": {
+					"raw": "localhost:3000/drivers?location=QV",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"drivers"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "QV",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
